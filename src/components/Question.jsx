@@ -8,7 +8,7 @@ import FormLabel from '@mui/material/FormLabel';
 import Button from '@mui/material/Button';
 import { Typography } from '@mui/material';
 
-class ErrorRadios extends Component {
+class Question extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -43,10 +43,22 @@ class ErrorRadios extends Component {
     });
   };
 
+  createQuestionAnswer = () => {
+    const { question, setQuestionsResults } = this.props;
+    const { value } = this.state;
+    const questionAnswer = {
+      text: question.text,
+      options: this.state.options,
+      answer: question.answer,
+      user_answer: value,
+    };
+    setQuestionsResults(questionAnswer);
+  };
+
   handleSubmit = (event) => {
     event.preventDefault();
     const { submitted, value } = this.state;
-    const { question, incrementPassed, incrementFailed, incrementIndex } = this.props;
+    const { question, incrementPassed, incrementFailed, incrementIndex, incrementSkiped} = this.props;
     
     if (!submitted) {
       if (value === question.answer) {
@@ -55,6 +67,7 @@ class ErrorRadios extends Component {
           error: false,
           submitted: true,
         });
+        this.createQuestionAnswer();
         incrementPassed();
       } else if (value !== question.answer && value !== '') {
         this.setState({
@@ -62,6 +75,7 @@ class ErrorRadios extends Component {
           submitted: true,
           error: true,
         });
+        this.createQuestionAnswer();
         incrementFailed();
       } else {
         this.setState({
@@ -69,6 +83,8 @@ class ErrorRadios extends Component {
           submitted: true,
           error: true,
         });
+        incrementSkiped();
+        this.createQuestionAnswer();
       }
     } else {
       this.setState({
@@ -137,4 +153,4 @@ class ErrorRadios extends Component {
   }
 }
 
-export default ErrorRadios;
+export default Question;
