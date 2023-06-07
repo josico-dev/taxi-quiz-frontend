@@ -8,19 +8,20 @@ import RemoveIcon from "@mui/icons-material/Remove";
 import { Box } from "@mui/material";
 
 function ConfigExam(props) {
-    const [n_questions, setNQuestions] = React.useState(10);
+    const [n_questions, setn_questions] = React.useState(10);
 
     const handleSubmit = (event) => {
         event.preventDefault();
+        props.setNQuestions(n_questions);
         props.setReady(true);
     };
 
     const handleIncrement = () => {
-        setNQuestions((prevValue) => prevValue + 1);
+        setn_questions((prevValue) => prevValue + 1);
     };
 
     const handleDecrement = () => {
-        setNQuestions((prevValue) => (prevValue > 1 ? prevValue - 1 : 1));
+        setn_questions((prevValue) => (prevValue > 1 ? prevValue - 1 : 1));
     };
 
     return (
@@ -35,7 +36,7 @@ function ConfigExam(props) {
                     <TextField
                         type="text"
                         value={n_questions}
-                        onChange={(e) => setNQuestions(e.target.value)}
+                        onChange={(e) => setn_questions(e.target.value)}
                         label="Número de preguntas"
                         InputProps={{
                             inputMode: "numeric",

@@ -44,7 +44,7 @@ class Question extends Component {
   };
 
   createQuestionAnswer = () => {
-    const { question, setQuestionsResults } = this.props;
+    const { question, setQuestionResult } = this.props;
     const { value } = this.state;
     const questionAnswer = {
       text: question.text,
@@ -52,7 +52,7 @@ class Question extends Component {
       answer: question.answer,
       user_answer: value,
     };
-    setQuestionsResults(questionAnswer);
+    setQuestionResult(questionAnswer);
   };
 
   handleSubmit = (event) => {

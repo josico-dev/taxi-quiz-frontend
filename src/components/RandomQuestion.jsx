@@ -66,7 +66,7 @@ function RandomQuestion(props) {
         <div>
             <ExitButton finishExam={finishExam} />
 
-            <Question question={question} incrementIndex={incrementIndex} setQuestionsResults={uploadQuestionAnswer} incrementPassed={incrementPassed} incrementFailed={incrementFailed} incrementSkiped={incrementSkiped} style={{ m: 3 }} />
+            <Question question={question} incrementIndex={incrementIndex} setQuestionResult={uploadQuestionAnswer} incrementPassed={incrementPassed} incrementFailed={incrementFailed} incrementSkiped={incrementSkiped} style={{ m: 3 }} />
         </div>
     );
 }
