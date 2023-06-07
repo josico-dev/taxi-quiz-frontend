@@ -90,6 +90,7 @@ class Question extends Component {
       this.setState({
         submitted: false,
         helperText: 'Escoge la respuesta correcta',
+        error: false,
       });
       incrementIndex();
     }
