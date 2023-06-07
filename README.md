@@ -1,3 +1,5 @@
+[![Netlify Status](https://api.netlify.com/api/v1/badges/05e479a6-d5dc-40c0-8df6-a45d4901de22/deploy-status)](https://app.netlify.com/sites/test-aptitud-taxi/deploys)
+
 # Taxi Legislation in Algeciras Multiple Choice Quiz
 
 This project is a React front-end implementation of a multiple choice quiz focused on testing your knowledge about the taxi legislation in Algeciras, Spain. The quiz aims to assess your understanding of the rules and regulations governing the taxi industry in Algeciras.
