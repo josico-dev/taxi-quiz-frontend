@@ -17,7 +17,7 @@ function Exam(props) {
             .then(response => response.json())
             .then(data => { setQuestions(data) })
             .catch(error => console.log(error));
-    }, [ready]);
+    }, [ready, props.n_questions]);
 
     const incrementPassed = () => {
         setPassed(passed + 1);
